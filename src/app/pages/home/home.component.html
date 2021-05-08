@@ -1,18 +1,30 @@
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let student of students; let index = index">
-        <th scope="row">{{index}}</th>
-        <td>{{student.first_name}}</td>
-        <td>{{student.first_name}}</td>
-        <td>{{student.email}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+
+    <h2 class="mb-1">Liste students</h2>
+
+    <mat-form-field class="w-25">
+        <input class="form-control" matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Filter">
+    </mat-form-field>
+        
+    <cdk-virtual-scroll-viewport tvsItemSize class="wrapper mat-elevation-z2" *ngIf="!isLoading">
+        <table mat-table [dataSource]="students">
+            <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+            <ng-container matColumnDef="first_name">
+            <th mat-header-cell *matHeaderCellDef>Firstname</th>
+            <td mat-cell *matCellDef="let element">{{element.first_name}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="last_name">
+                <th mat-header-cell *matHeaderCellDef>Lastname</th>
+                <td mat-cell *matCellDef="let element">{{element.last_name}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let element">{{element.email}}</td>
+            </ng-container>
+        </table>
+    </cdk-virtual-scroll-viewport>
+</div>

@@ -1,14 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { StudentService } from 'src/app/shared/services/student.service';
+import { TableVirtualScrollDataSource } from 'ng-table-virtual-scroll';
+import { MatSort } from '@angular/material/sort';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
-  isLoading: boolean = false;
-  students: any = [];
+  isLoading: boolean = true;
+  students = new TableVirtualScrollDataSource();;
+  displayedColumns = ['first_name', 'last_name', 'email'];
+
   constructor(
     private studentService: StudentService,
   ) { }
@@ -20,7 +26,12 @@ export class HomeComponent implements OnInit {
   }
 
   async loadData() {
-    this.students = await this.studentService.getList();
+    const data = await this.studentService.getList();
+    this.students = new TableVirtualScrollDataSource(data);
+  }
+
+  applyFilter(filterValue: string) {
+    this.students.filter = filterValue.trim().toLowerCase();
   }
 
 }

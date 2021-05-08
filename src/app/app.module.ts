@@ -19,6 +19,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { StudentService } from './shared/services/student.service';
 import { CommonModule } from '@angular/common';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   exports: [
@@ -31,7 +34,10 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatMenuModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    ScrollingModule,
+    TableVirtualScrollModule,
+    MatTableModule
   ],
   imports: [NoopAnimationsModule],
   declarations: [],

@@ -5,6 +5,10 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './userpages.routes';
 import { SharedModule } from '../shared/shared.module';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -14,6 +18,10 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule,
+    ScrollingModule,
+    TableVirtualScrollModule,
+    MatTableModule,
+    MatFormFieldModule,
     RouterModule.forChild(routes),
   ],
   providers: [],
