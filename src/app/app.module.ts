@@ -15,14 +15,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { HomeComponent } from './pages/home/home.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { StudentService } from './shared/services/student.service';
-import { CommonModule } from '@angular/common';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   exports: [
@@ -54,8 +53,8 @@ export class MaterialModule { }
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
-    CommonModule,
+    MaterialModule,    
+    FormsModule,
     BrowserAnimationsModule
   ],
   providers: [StudentService],

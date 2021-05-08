@@ -8,8 +8,6 @@ import Student from 'src/app/shared/models/student.model';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-
-  
   constructor(
     public dialogRef: MatDialogRef<DetailComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Student

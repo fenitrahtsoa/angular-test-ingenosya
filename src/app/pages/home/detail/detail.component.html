@@ -4,48 +4,59 @@
             <button (click)="onClose()" type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <h2 style="color: black">Détail <span class="title-2">( {{data.first_name}} )</span></h2>
+            <h2 style="color: black">Détail: 
+                <span class="title-2"> {{data.first_name}} 
+                    <i class="icon ml-2 fa" [ngClass]="data.gender === 'Male' ? 'fa-male':'fa-female'"></i>
+                </span>
+            </h2>
         </div>
     </div>
 
     <div class="row mt-3">
         <div class="col-4 text-secondary">
-            <div class="mb-2">Title</div>
-            <div class="mb-2">Name</div>
-            <div class="mb-2">Email</div>
-            <div class="mb-2">Promotion</div>
-            <div class="mb-2">Gender</div>
-            <div class="mb-2">Birthday</div>
-            
-            <div class="mb-2">street_name</div>
-            <div class="mb-2">city</div>
-            <div class="mb-2">country</div>
-            <div class="mb-2">company</div>
-            <div class="mb-2">prefered_color</div>
-
-            <div class="mb-2">street_address</div>
-            <div class="mb-2">planned_career</div>
-            <div class="mb-2">university</div>
-            <div class="mb-2">linkedin</div>
+            <div class="mb-3">Title</div>
+            <div class="mb-3">Name</div>
+            <div class="mb-3">Email</div>
+            <div class="mb-3">Promotion</div>
+            <div class="mb-3">Gender</div>
+            <div class="mb-3">Birthday</div>            
+            <div class="mb-3">Street name</div>
+            <div class="mb-3">City</div>
+            <div class="mb-3">Country</div>
+            <div class="mb-3">Company</div>            
+            <div class="mb-3">Street address</div>
+            <div class="mb-3">Prefered color</div>
+            <div class="mb-3">Planned career</div>
+            <div class="mb-3">University</div>
+            <div class="mb-3">linkedin</div>
 
         </div>
         <div class="col-8">
-            <div class="mb-2">{{data.title}}</div>
-            <div class="mb-2">{{data.first_name}} {{data.last_name}}</div>
-            <div class="mb-2">{{data.email}}</div>
-            <div class="mb-2">{{data.promotion}}</div>
-            <div class="mb-2">{{data.gender}}</div>
-            <div class="mb-2">{{data.birth}}</div>
-            
-            <div class="mb-2">{{data.street_name}}</div>
-            <div class="mb-2">{{data.city}}</div>
-            <div class="mb-2">{{data.country}}</div>
-            <div class="mb-2">{{data.company}}</div>
-            <div class="mb-2">{{data.prefered_color}}</div>
-            <div class="mb-2">{{data.street_address}}</div>
-            <div class="mb-2">{{data.planned_career}}</div>
-            <div class="mb-2">{{data.university}}</div>
-            <div class="mb-2">{{data.linkedin}}</div>
+            <div class="mb-3">{{data.title}}</div>
+            <div class="mb-3">{{data.first_name}} {{data.last_name}}</div>
+            <div class="mb-3">{{data.email}}</div>
+            <div class="mb-3">{{data.promotion}}</div>
+            <div class="mb-3">                
+                {{data.gender}} 
+            </div>
+            <div class="mb-3">{{data.birth}}</div>            
+            <div class="mb-3">{{data.street_name}}</div>
+            <div class="mb-3">{{data.city}}</div>
+            <div class="mb-3">{{data.country}}</div>
+            <div class="mb-3">{{data.company}}</div>
+            <div class="mb-3">{{data.street_address}}</div>
+            <div class="mb-3">{{data.prefered_color}} <span class="ml-3 badge badge-secondary d-inline-block" [style.background]="data.prefered_color"></span></div>            
+            <div class="mb-3">{{data.planned_career}}</div>
+            <div class="mb-3">
+                <i class="mr-2 fa fa-university"></i>
+                {{data.university}}
+            </div>
+            <div class="mb-3">
+                <a href="https://www.linkedin.com/in/{{data.linkedin}}" target="_blank">
+                    <i class="mr-2 fab fa-linkedin"></i>
+                    {{data.linkedin}}
+                </a>
+            </div>
         </div>
 
     </div>
