@@ -9,7 +9,6 @@ import Student from 'src/app/shared/models/student.model';
 })
 
 export class DetailComponent implements OnInit {
-
   constructor(
     public dialogRef: MatDialogRef<DetailComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Student
@@ -21,5 +20,4 @@ export class DetailComponent implements OnInit {
   onClose() {
     this.dialogRef.close();
   }
-
 }
