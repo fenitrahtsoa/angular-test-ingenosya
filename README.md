@@ -19,6 +19,7 @@ Guide pour lancer le projet
 2.	Ajout page Readme dans le projet "visible sur le navbar"
 3.	Ajout Filtre sur liste des etudiants
 4.	Ajout des icon dans le modal détail d'une etudiant
+5.	Ajout une redirection vers LinkedIn dans détail
 
 
 
