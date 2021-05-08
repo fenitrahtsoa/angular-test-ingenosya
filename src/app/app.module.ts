@@ -15,8 +15,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HomeComponent } from './pages/home/home.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { StudentService } from './shared/services/student.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   exports: [
@@ -32,21 +34,23 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSelectModule
   ],
   imports: [NoopAnimationsModule],
-  //declarations: [GalleryComponent],
+  declarations: [],
 })
 export class MaterialModule { }
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainLayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    CommonModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
