@@ -9,10 +9,14 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { DetailComponent } from './home/detail/detail.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    DetailComponent
   ],
   imports: [
     CommonModule,
@@ -22,9 +26,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     TableVirtualScrollModule,
     MatTableModule,
     MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
     RouterModule.forChild(routes),
   ],
   providers: [],
-  entryComponents: []
+  entryComponents: [
+    DetailComponent
+  ]
 })
 export class UserpagesModule { }

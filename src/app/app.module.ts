@@ -22,6 +22,7 @@ import { CommonModule } from '@angular/common';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
 import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   exports: [
@@ -37,7 +38,8 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     ScrollingModule,
     TableVirtualScrollModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule
   ],
   imports: [NoopAnimationsModule],
   declarations: [],
