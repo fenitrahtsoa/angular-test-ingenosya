@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { StudentService } from 'src/app/shared/services/student.service';
 import { TableVirtualScrollDataSource } from 'ng-table-virtual-scroll';
-import { MatSort } from '@angular/material/sort';
-import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
 import { DetailComponent } from './detail/detail.component';
 import Student from 'src/app/shared/models/student.model';
+import * as XLSX from 'xlsx'; 
 
 @Component({
   selector: 'app-home',
@@ -17,6 +16,7 @@ export class HomeComponent implements OnInit {
   isLoading: boolean = true;
   students = new TableVirtualScrollDataSource();;
   displayedColumns = ['first_name', 'last_name', 'email'];
+  fileName = 'ExcelStudent.xlsx';  
 
   constructor(
     private studentService: StudentService,
@@ -51,5 +51,17 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+  exportexcel(): void {
+       /* table id is passed over here */   
+       let element = document.getElementById('student-table'); 
+       const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
 
+       /* generate workbook and add the worksheet */
+       const wb: XLSX.WorkBook = XLSX.utils.book_new();
+       XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+       /* save to file */
+       XLSX.writeFile(wb, this.fileName);
+			
+  }
 }

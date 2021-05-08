@@ -37,3 +37,14 @@ $angular-test-ingenosya-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* custome */
+.export {
+  float: right;
+  mat-icon {
+      position: relative;
+      top: 5px;
+      font-size: 20px;
+  }
+}

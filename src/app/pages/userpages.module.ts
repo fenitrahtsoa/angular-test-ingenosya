@@ -13,11 +13,14 @@ import { DetailComponent } from './home/detail/detail.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReadmeComponent } from './readme/readme.component';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    DetailComponent
+    DetailComponent,
+    ReadmeComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +30,7 @@ import { BrowserModule } from '@angular/platform-browser';
     TableVirtualScrollModule,
     MatTableModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
     MatDialogModule,
     RouterModule.forChild(routes),

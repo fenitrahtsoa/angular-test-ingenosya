@@ -2,12 +2,22 @@
 
     <h2 class="mb-1">Liste students</h2>
 
-    <mat-form-field class="w-25">
-        <input class="form-control" matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Filter">
-    </mat-form-field>
+    <div class="row">
+        <div class="col-6">
+            <mat-form-field class="w-75">
+                <input class="form-control" matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Filter">
+            </mat-form-field>
+        </div>
+        
+        <div class="col-6">
+            <a class="btn btn-primary text-right export" (click)="exportexcel()">
+                Export to excel <mat-icon> cloud_download</mat-icon>
+            </a>
+        </div>
+    </div>    
         
     <cdk-virtual-scroll-viewport tvsItemSize class="wrapper mat-elevation-z2" *ngIf="!isLoading">
-        <table mat-table [dataSource]="students">
+        <table mat-table [dataSource]="students" id="student-table">
             <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             
